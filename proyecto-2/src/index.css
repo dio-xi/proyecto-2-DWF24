@@ -24,3 +24,7 @@
   font-weight: 80;
   line-height: 1.7;
 }
+
+@media screen and (min-width: 375px) {
+  
+}
