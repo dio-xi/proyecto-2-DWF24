@@ -4,11 +4,6 @@ function App() {
 
   return (
     <>
-      Collections
-      Men
-      Women
-      About
-      Contact
 
       Sneaker Company
 

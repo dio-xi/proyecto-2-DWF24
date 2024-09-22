@@ -6,8 +6,7 @@ function NavBar() {
         <nav>
             <div className="logo">
                 <img src='./src/images/logo.svg'/>
-            </div>
-            <div>            
+            </div>     
                 <ul>
                     <li><a href='#'>Collections</a></li>
                     <li><a href='#'>Men</a></li>
@@ -15,8 +14,6 @@ function NavBar() {
                     <li><a href='#'>About</a></li>
                     <li><a href='#'>Contact</a></li>
                 </ul>
-            </div>
-
         </nav>
     )
 }
