@@ -39,7 +39,7 @@ nav {
   justify-content: space-between;
 }
 
-nav .logo-nav {
+.nav-bar {
   display: flex;
 }
 
@@ -58,19 +58,53 @@ nav ul li a {
   align-items: center;
 }
 
+.menu-icon {
+  display: none;
+}
+
+/* MOBILE NAV BAR */
+
+
+@media (max-width: 900px) {
+
+  body {
+    padding: 20px;
+  }
+
+  nav ul {
+    display: none;
+  }
+
+  .menu-icon {
+    display: block;
+    padding-right: 10px;
+  }
+
+  nav {
+    padding-bottom: 20px;
+    border-bottom: none;
+    justify-content: space-between;
+  }
+
+  .profile img {
+    height: 32px;
+    /* NO TOMA ESTE ESTILO */
+  }
+
+}
+
+
 /* SHOPPING CART & PROFILE */
 
-nav .cart-profile {
+.cart-profile {
   display: flex;
   align-items: center;
 }
 
-nav .shopping-cart {
+.shopping-cart {
   margin-right: 40px;
 }
 
-nav .profile img {
-  width: 40px;
+.profile img {
   height: 40px;
-  border-radius: 50;
 }
