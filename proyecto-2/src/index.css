@@ -6,8 +6,8 @@
   --paleOrange: hsl(25, 100%, 94%);
   /* neutral */
   --darkBlue: hsl(220, 13%, 13%);
-  --darkGray: hsl(219, 9%, 45%);
-  --grayishBlue: hsl(220, 14%, 75%);
+  --darkGrey: hsl(219, 9%, 45%);
+  --greyishBlue: hsl(220, 14%, 75%);
   --lightBlue: hsl(223, 64%, 98%);
   --white: hsl(0, 0%, 100%);
   /* - Black (with 75% opacity for lightbox background) */
@@ -29,19 +29,18 @@ body {
   padding: 40px 100px;
 }
 
-/* NAV BAR & SHOPPING CART*/
+/* NAV BAR*/
 
 nav {
   display: flex;
   align-items: center;
   padding-bottom: 40px;
-
+  border-bottom: 1px solid var(--greyishBlue);
+  justify-content: space-between;
 }
 
-nav .logo {
-  font-size: 24px;
-  font-weight: bold;
-  
+nav .logo-nav {
+  display: flex;
 }
 
 nav ul {
@@ -51,8 +50,27 @@ nav ul {
 }
 
 nav ul li a {
+  display: flex;
   margin: 0 15px;
   font-size: 16px;
   text-decoration: none;
-  color: var(--darkGray);
+  color: var(--black);
+  align-items: center;
+}
+
+/* SHOPPING CART & PROFILE */
+
+nav .cart-profile {
+  display: flex;
+  align-items: center;
+}
+
+nav .shopping-cart {
+  margin-right: 40px;
+}
+
+nav .profile img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50;
 }
