@@ -3,11 +3,11 @@ import productImages from './productImages.js';
 
 function ImageGallery() {
     const [selectedImageIndex, setSelectedImageIndex] = useState(0);
-    const [isMobile, setIsMobile] = useState(window.innerWidth <= 700);
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 900);
 
     useEffect(() => {
         const handleResize = () => {
-            setIsMobile(window.innerWidth <= 700);
+            setIsMobile(window.innerWidth <= 900);
         };
 
         window.addEventListener('resize', handleResize);
