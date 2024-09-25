@@ -1,13 +1,9 @@
 import React, { useState } from "react";
-import './ProductPage.css';
 
 const ProductPage = () => {
     const [quantity, setQuantity] = useState(0);
-
     const handleIncrease = () => {
         setQuantity(prevQuantity => prevQuantity + 1);
-
-
 };
 
 const handleDecrease = () => {
@@ -18,15 +14,15 @@ return (
     <div className="product-page">
         <div className="product-image-gallery">
             <img 
-                src="image-product-1.jpg"
+                src="./src/images/image-product-1.jpg"
                 alt="Fall Limited Edition Sneakers"
                 className="main-image"
             />
             <div className="thumnail-photos">
-                <img src="image-product-1-thumnail.jpg" alt="" />
-                <img src="image-product-2-thumnail.jpg" alt="" />
-                <img src="image-pruduct-3-thumnail.jpg" alt="" />
-                <img src="image-product-4-thumnail.jpg" alt="" />
+                <img src="./src/images/image-product-1-thumbnail.jpg" alt="Sneakers 1" />
+                <img src="./src/images/image-product-2-thumbnail.jpg" alt="Sneakers 2" />
+                <img src="./src/images/image-product-3-thumbnail.jpg" alt="Sneakers 3" />
+                <img src="./src/images/image-product-4-thumbnail.jpg" alt="Sneakers 1" />
             </div>
         </div>
         <div className="product-details">
@@ -36,8 +32,8 @@ return (
             </p>
             <div className="price-section">
                 <span className="discounted-price">$125.00</span>
-                <span className="original-price">$250.00</span>
                 <span className="discount-label">50% OFF</span>
+                <span className="original-price">$250.00</span>
             </div>
             <div className="quantity-section">
                 <button onClick={handleDecrease}>-</button>

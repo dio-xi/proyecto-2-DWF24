@@ -19,7 +19,6 @@ function NavBar() {
                     </ul>
                 </div>
             </div>
-
             <div className="cart-profile">
                 <div className="shopping-cart">
                     <a href="#"><img src="./src/images/icon-cart.svg" alt="Shopping Cart" /></a>
