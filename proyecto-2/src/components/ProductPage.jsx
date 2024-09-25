@@ -12,19 +12,6 @@ const handleDecrease = () => {
 
 return (
     <div className="product-page">
-        <div className="product-image-gallery">
-            <img 
-                src="./src/images/image-product-1.jpg"
-                alt="Fall Limited Edition Sneakers"
-                className="main-image"
-            />
-            <div className="thumnail-photos">
-                <img src="./src/images/image-product-1-thumbnail.jpg" alt="Sneakers 1" />
-                <img src="./src/images/image-product-2-thumbnail.jpg" alt="Sneakers 2" />
-                <img src="./src/images/image-product-3-thumbnail.jpg" alt="Sneakers 3" />
-                <img src="./src/images/image-product-4-thumbnail.jpg" alt="Sneakers 1" />
-            </div>
-        </div>
         <div className="product-details">
             <h1>Fall Limited Edition Sneakers</h1>
             <p>
