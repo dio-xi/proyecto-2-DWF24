@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function NavBar() {
+function NavBar({ cartItems }) {
     const [menuOpen, setMenuOpen] = useState(false);
 
     const toggleMenu = () => {
@@ -15,7 +15,7 @@ function NavBar() {
             <div className="logo">
                 <a href="#"><img src='./src/images/logo.svg' alt="Logo" /></a>
             </div>
-            <div className={`menu-links ${menuOpen ? 'open' : ''}`}>
+            <div className={`menu-links ${menuOpen ? "open" : ""}`}>
                 <div className="close-icon" onClick={toggleMenu}>
                     <img src="./src/images/icon-close.svg" alt="Close Icon" />
                 </div>
@@ -30,10 +30,14 @@ function NavBar() {
             
             <div className="cart-profile">
                 <div className="shopping-cart">
-                    <a href="#"><img src="./src/images/icon-cart.svg" alt="Shopping Cart" /></a>
+                    <a href="#">
+                        <img src="./src/images/icon-cart.svg" alt="Shopping Cart" />
+                        {cartItems > 0 && <span className="cart-count">{cartItems}</span>}
+                        </a>
                 </div>
                 <div className="profile">
-                    <a href="#"><img src="./src/images/image-avatar.png" alt="Profile" /></a>
+                    <a href="#"><img src="./src/images/image-avatar.png" alt="Profile" />
+                    </a>
                 </div>
             </div>
         </nav>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import productImages from './productImages.js';
+import productImages from './ProductImages.js';
 
 function ImageGallery() {
     const [selectedImageIndex, setSelectedImageIndex] = useState(0);
