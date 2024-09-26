@@ -67,7 +67,14 @@ function ImageGallery() {
                     ))
                 )}
             </div>
-
+            <div className="navigation-buttons">
+                            <button className="prev-button" onClick={previousImage}>
+                                <img src='./src/images/icon-previous.svg' alt="Previous" />
+                            </button>
+                            <button className="next-button" onClick={nextImage}>
+                                <img src='./src/images/icon-next.svg' alt="Next" />
+                            </button>
+            </div>
             {!isMobile && Lightbox && (
                 <div className="lightbox-overlay" onClick={closeLightbox}>
                     <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
