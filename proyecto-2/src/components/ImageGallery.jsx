@@ -56,10 +56,10 @@ function ImageGallery() {
                 {isMobile && (
                     <div className="navigation-buttons">
                         <button className="prev-button" onClick={previousImage}>
-                            <a href="#"><img src='./src/images/icon-previous.svg' alt="Previous" /></a>
+                            <img src='./src/images/icon-previous.svg' alt="Previous" />
                         </button>
                         <button className="next-button" onClick={nextImage}>
-                            <a href="#"><img src='./src/images/icon-next.svg' alt="Next" /></a>
+                            <img src='./src/images/icon-next.svg' alt="Next" />
                         </button>
                     </div>
                 )}
