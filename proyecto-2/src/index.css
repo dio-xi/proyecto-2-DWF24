@@ -473,24 +473,15 @@ nav ul li a {
 
   .navigation-buttons {
     display: flex;
+    justify-items: end;
   }
 
   .prev-button, .next-button {
-    position: absolute;
-    top: 32%;
     background-color: var(--white);
-    border-radius: 50%;
+    border-radius: 60%;
     width: 30px;
     height: 30px;
     border-style: hidden;
-  }
-
-  .prev-button {
-    left: 8px;
-  }
-
-  .next-button {
-    right: 8px;
   }
 
   .prev-button img,

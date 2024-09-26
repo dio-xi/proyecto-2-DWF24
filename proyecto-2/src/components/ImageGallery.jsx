@@ -17,9 +17,13 @@ function ImageGallery() {
         };
     }, []);
 
-    const handleImageClick = (index) => {
+    const openLightBox = (index) => {
         setSelectedImageIndex(index);
         setLightbox(true);
+    };
+
+    const handleImageClick = (index) => {
+        setSelectedImageIndex(index);
     };
 
     const nextImage = () => {
@@ -42,12 +46,10 @@ function ImageGallery() {
                     <img
                         src={productImages[selectedImageIndex]}
                         alt="Product"
-                        onClick={() => handleImageClick(selectedImageIndex)}
+                        onClick={() => openLightBox(selectedImageIndex)}
                     />
                 </div>
             )}
-
-            
             <div className="thumbnail-images">
                 {isMobile ? (
                     <img
@@ -66,8 +68,17 @@ function ImageGallery() {
                         />
                     ))
                 )}
+                {isMobile && (
+                    <div className="navigation-buttons">
+                        <button className="prev-button" onClick={previousImage}>
+                            <img src='./src/images/icon-previous.svg' alt="Previous" />
+                        </button>
+                        <button className="next-button" onClick={nextImage}>
+                            <img src='./src/images/icon-next.svg' alt="Next" />
+                        </button>
+                    </div>
+                )}
             </div>
-
             {!isMobile && Lightbox && (
                 <div className="lightbox-overlay" onClick={closeLightbox}>
                     <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
