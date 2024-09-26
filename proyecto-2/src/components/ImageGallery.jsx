@@ -79,6 +79,7 @@ function ImageGallery() {
                     </div>
                 )}
             </div>
+
             {!isMobile && Lightbox && (
                 <div className="lightbox-overlay" onClick={closeLightbox}>
                     <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
