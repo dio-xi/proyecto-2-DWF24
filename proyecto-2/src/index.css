@@ -10,7 +10,7 @@
   --greyishBlue: hsl(220, 14%, 75%);
   --lightBlue: hsl(223, 64%, 98%);
   --white: hsl(0, 0%, 100%);
-  --black: #000000
+  --black: #000000;
 }
 
 /* BODY */
@@ -37,8 +37,8 @@ nav {
   justify-content: space-between;
 }
 
-.nav-bar {
-  display: flex;
+.menu-icon, .close-icon {
+  display: none;
 }
 
 .menu-links {
@@ -66,17 +66,13 @@ nav ul li a:hover {
   color: var(--orange);
 }
 
-.menu-icon {
-  display: none;
-}
-
-.close-icon {
-  display: none;
-}
-
-.logo {
-  justify-self: flex-start;
-  margin-right: auto;
+nav ul li a {
+  display: flex;
+  margin: 0 15px;
+  font-size: 16px;
+  text-decoration: none;
+  color: var(--darkGrey);
+  align-items: center;
 }
 
 /* SHOPPING CART & PROFILE */
@@ -86,19 +82,39 @@ nav ul li a:hover {
   align-items: center;
 }
 
+.cart-profile button {
+  background-color: var(--white);
+  border-style: none;
+}
+
 .profile img {
   height: 40px;
 }
 
+.profile img:hover {
+  border: 2px solid var(--orange);
+  border-radius: 50px;
+}
+
 .shopping-cart {
   margin-right: 40px;
+  display:flex;
+  align-items: center;
 }
+
+.cart-count {
+  background-color: var(--orange);
+  color: var(--white);
+  border-radius: 50px;
+  width: 20px;
+  height: 15px;
+}
+
 
 /* MAIN CONTENT */
 
 .main-content {
   display: flex;
-  flex-direction: row;
   justify-content: center;
   margin-top: 50px;
 }
@@ -124,8 +140,7 @@ nav ul li a:hover {
 
 .thumbnail-images {
   display: flex;
-  margin-top: 20px;
-  flex-direction: row;
+  margin-top: 10px;
   justify-content: space-between;
   width: 100%;
 }
@@ -257,7 +272,6 @@ nav ul li a:hover {
 .product-details h3 {
   color: var(--darkGrey);
   font-size: 12px;
-  font-weight: 400;
   letter-spacing: 1px;
   margin-bottom: 23px;
 }
@@ -278,12 +292,12 @@ nav ul li a:hover {
 
 .price-section {
   display: flex;
-  margin-bottom: 20px;
   flex-direction: column;
+  margin-bottom: 20px;
 }
 
 .final-price {
-  display: flex;;
+  display: flex;
   align-items: center;
   margin-bottom: 10px;
 }
@@ -307,7 +321,7 @@ nav ul li a:hover {
   font-size: 16px;
   color: var(--greyishBlue);
   text-decoration: line-through;
-  align-items: center;
+  margin-top: 5px;
 }
 
 .quantity-cart {
@@ -320,20 +334,16 @@ nav ul li a:hover {
   align-items: center;
   background-color: var(--lightBlue);
   border-radius: 10px;
+  margin-right: 20px;
 }
 
 .quantity-section button {
-  background-color: var(--lightBlue);
+  background-color: transparent;
   border: none;
-  font-size: 18px;
-  color: var(--black);
-  border-radius: 5px;
-  width: 60px;
-  height: 60px;
-}
-
-.quantity-section button:hover {
   color: var(--orange);
+  font-size: 24px;
+  width: 40px;
+  height: 60px;
 }
 
 .quantity-section span {
@@ -357,14 +367,9 @@ nav ul li a:hover {
   justify-content: center;
 }
 
-.add-to-cart img {
-  margin-right: 10px;
-}
-
 /* ==========MOBILE VERSION========== */
 
 @media (max-width: 900px) {
-
   body {
     padding: 0px;
   }
@@ -437,6 +442,10 @@ nav ul li a:hover {
     height: 30px;
   }
 
+  .profile img:hover {
+  border: none;
+  }
+
   /* MAIN CONTENT */
 
   .main-content {
@@ -466,13 +475,14 @@ nav ul li a:hover {
     display: flex;
   }
 
-  .navigation-buttons .prev-button, .navigation-buttons .next-button {
-      position: absolute;
-      top: 39%;
-      background-color: var(--white);
-      border-radius: 60%;
-      width: 20px;
-      height: 35px;
+  .prev-button, .next-button {
+    position: absolute;
+    top: 32%;
+    background-color: var(--white);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    border-style: hidden;
   }
 
   .prev-button {
@@ -512,101 +522,30 @@ nav ul li a:hover {
   }
 
   .quantity-cart {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  }
-
-.quantity-section button {
-  background-color: transparent;
-  border: none;
-  color: var(--orange);
-  font-size: 24px;
-  cursor: pointer;
-  transition: none;
-}
-
-.quantity-section button:hover {
-  color: var(--orange);
-}
-  .quantity-section button:active {
-  color: var(--orange);
-  }
-}
-
-
-/* SNEAKER COMPANY */
-.company-name {
-  font-size: 14px;
-  color: var(--darkGrey);
-  margin-bottom: 1rem;
-}
-
-.product-details h1 {
-  font-weight: bolder;
-}
-
-.product-details p {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  font-size: medium;
-  line-height: 1.5rem;
-  color: var(--darkGrey);
-}
-
-.price-section {
-  display: flex;
-  flex-direction: column;
-}
-
-.price-section__top {
-  display: flex;
-  align-items: center;
-}
-
-.discounted-price {
-  font-size: 24px;
-  font-weight: bold;
-  margin-right: 10px;
-}
-
-.discount-label {
-  background-color: #000;
-  color: #fff;
-  padding: 2px 5px;
-  border-radius: 5px;
-  font-size: 14px;
-  font-weight: bold;
-}
-
-.original-price {
-  font-size: 14px;
-  color: var(--greyishBlue);
-  font-weight: bold;
-  text-decoration: line-through;
-  margin-top: 5px;
-}
-
-.container-btn { 
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.quantity-section {
-  margin-right: 20px;
-}
-
-/* Media Query para dispositivos móviles */
-@media (max-width: 768px) {
-  .container-btn {
+    display: flex;
+    align-items: center;
     flex-direction: column;
-    align-items: flex-start;
+  }
+
+  .quantity-section button {
+    background-color: transparent;
+    border: none;
+    color: var(--orange);
+    font-size: 24px;
+  }
+
+  .quantity-section button:hover {
+    color: var(--orange);
+  }
+
+  .quantity-section button:active {
+    color: var(--orange);
   }
 
   .quantity-section {
-    width: 100%;
-    margin-right: 0;
+    margin-right: 0px;
     margin-bottom: 10px;
+    width: 100%;
+    justify-content: space-between;
   }
 }
-

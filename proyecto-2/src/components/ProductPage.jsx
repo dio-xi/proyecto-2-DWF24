@@ -29,14 +29,14 @@ return (
           the weather can offer.
         </p>
         <div className="price-section">
-        <div className="price-section__top">
+        <div className="final-price">
           <span className="discounted-price">$125.00</span>
           <span className="discount-label">50%</span>
         </div>
         <span className="original-price">$250.00</span>
     </div>
 
-    <div className="container-btn">
+      <div className="quantity-cart">
         <div className="quantity-section">
           <button onClick={handleDecrease}>-</button>
           <span>{quantity}</span>
