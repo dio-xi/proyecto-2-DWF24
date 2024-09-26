@@ -2,7 +2,7 @@ function ShoppingCart () {
 
     return (
         <div>
-            
+            ladskjlka
         </div>
     )
 };
