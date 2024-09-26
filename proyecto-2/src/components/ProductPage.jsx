@@ -43,7 +43,6 @@ return (
         <button className="add-to-cart" onClick={handleAddToCart}>
           Add to cart
         </button>
-        
       </div>
     </div>
   );
