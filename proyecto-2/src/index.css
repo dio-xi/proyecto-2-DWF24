@@ -91,6 +91,11 @@ nav ul li a {
   height: 40px;
 }
 
+.profile img:hover {
+  border: 2px solid var(--orange);
+  border-radius: 50px;
+}
+
 .shopping-cart {
   margin-right: 40px;
   display:flex;
@@ -332,6 +337,10 @@ nav ul li a {
 
   .cart-profile .profile img {
     height: 30px;
+  }
+
+  .profile img:hover {
+  border: none;
   }
 
   /* MAIN CONTENT */
