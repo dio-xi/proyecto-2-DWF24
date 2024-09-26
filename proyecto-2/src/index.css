@@ -110,6 +110,23 @@ nav ul li a {
   height: 15px;
 }
 
+.checkoutCard {
+  display: flex;
+  
+}
+
+.checkoutImage {
+  width: 30px;
+}
+
+.titleCheckout {
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.itemDescription {
+  font-size: 0.8rem;
+}
 
 /* MAIN CONTENT */
 
