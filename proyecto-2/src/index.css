@@ -124,14 +124,14 @@ nav ul li a:hover {
 
 .thumbnail-images {
   display: flex;
-  margin-top: 10px;
+  margin-top: 20px;
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
 }
 
 .thumbnail-images img {
-  width: 70px;
+  width: 20%;
   border-radius: 10px;
   border: 2px solid transparent;
   transition: border 0.3s;
@@ -158,6 +158,91 @@ nav ul li a:hover {
 
 .navigation-buttons button:disabled {
   background-color: var(--darkGrey);
+}
+
+.lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.lightbox-content {
+  background: transparent;
+  padding: 20px;
+  position: relative;
+  max-width: 80%;
+  border-radius: 8px;
+  justify-content: center;
+}
+
+.lightbox-main-image {
+  position: relative;
+  display: flex;
+  justify-content: center; 
+  align-items: center;    
+  height: 50%;   
+}
+
+.lightbox-main-image img {
+  max-width: 400px;
+  height: auto;
+  border-radius: 10px; 
+  object-fit: contain;
+}
+
+.lightbox-thumbnail-images {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    
+}
+
+.lightbox-thumbnail-images img {
+    max-width: 70px;
+    height: auto;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.lightbox-thumbnail-images img.active,
+.lightbox-thumbnail-images img:hover {
+  border: 2px solid var(--orange);
+}
+
+.close-button {
+  color: var(--orange);
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.navigation-buttons {
+  position: absolute;
+  top: 180px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  border-radius: 20px;
+}
+
+.navigation-buttons .prev-button,
+.navigation-buttons .next-button {
+  background: var(--white);
+  border-radius: 100px;
+  border: none;
+  cursor: pointer;
 }
 
 /* PRODUCT PAGE */
@@ -415,6 +500,8 @@ nav ul li a:hover {
     justify-content: space-between;
     margin-right: 0px;
   }
+
+  
 
   /* PRODUCT PAGE */
 

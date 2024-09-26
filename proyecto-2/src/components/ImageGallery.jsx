@@ -4,6 +4,7 @@ import productImages from './ProductImages.js';
 function ImageGallery() {
     const [selectedImageIndex, setSelectedImageIndex] = useState(0);
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 900);
+    const [Lightbox, setLightbox] = useState(false);
 
     useEffect(() => {
         const handleResize = () => {
@@ -18,6 +19,7 @@ function ImageGallery() {
 
     const handleImageClick = (index) => {
         setSelectedImageIndex(index);
+        setLightbox(true);
     };
 
     const nextImage = () => {
@@ -28,13 +30,24 @@ function ImageGallery() {
         setSelectedImageIndex((prevIndex) => (prevIndex - 1 + productImages.length) % productImages.length);
     };
 
+    const closeLightbox = () => {
+        setLightbox(false);
+
+    };
+
     return (
         <div className="product-image-gallery">
             {!isMobile && (
                 <div className="main-image">
-                    <img src={productImages[selectedImageIndex]} alt="Product" />
+                    <img
+                        src={productImages[selectedImageIndex]}
+                        alt="Product"
+                        onClick={() => handleImageClick(selectedImageIndex)}
+                    />
                 </div>
             )}
+
+            
             <div className="thumbnail-images">
                 {isMobile ? (
                     <img
@@ -53,17 +66,37 @@ function ImageGallery() {
                         />
                     ))
                 )}
-                {isMobile && (
-                    <div className="navigation-buttons">
-                        <button className="prev-button" onClick={previousImage}>
-                            <img src='./src/images/icon-previous.svg' alt="Previous" />
-                        </button>
-                        <button className="next-button" onClick={nextImage}>
-                            <img src='./src/images/icon-next.svg' alt="Next" />
-                        </button>
-                    </div>
-                )}
             </div>
+
+            {!isMobile && Lightbox && (
+                <div className="lightbox-overlay" onClick={closeLightbox}>
+                    <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
+                        <button className="close-button" onClick={closeLightbox}>X</button>
+                        <div className="lightbox-main-image">
+                            <img src={productImages[selectedImageIndex]} alt="Product Lightbox" />
+                        </div>
+                        <div className="lightbox-thumbnail-images">
+                            {productImages.map((image, index) => (
+                                <img
+                                    key={index}
+                                    src={image}
+                                    alt={`Thumbnail ${index}`}
+                                    className={selectedImageIndex === index ? 'active' : ''}
+                                    onClick={() => setSelectedImageIndex(index)}
+                                />
+                            ))}
+                        </div>
+                        <div className="navigation-buttons">
+                            <button className="prev-button" onClick={previousImage}>
+                                <img src='./src/images/icon-previous.svg' alt="Previous" />
+                            </button>
+                            <button className="next-button" onClick={nextImage}>
+                                <img src='./src/images/icon-next.svg' alt="Next" />
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     );
 }
