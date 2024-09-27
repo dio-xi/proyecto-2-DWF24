@@ -1,0 +1,123 @@
+.product-page {
+    width: 100%;
+    max-width: 548px;
+    padding: 20px;
+    margin-left: 50px;
+}
+
+.product-details h3 {
+    color: var(--darkGrey);
+    font-size: 12px;
+    letter-spacing: 1px;
+    margin-bottom: 23px;
+}
+
+.product-details h1 {
+    font-size: 36px;
+    margin-bottom: 31px;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+.product-details p {
+    color: var(--darkGrey);
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 27px;
+}
+
+.price-section {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.final-price {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.discounted-price {
+    font-size: 28px;
+    font-weight: 700;
+    margin-right: 10px;
+}
+
+.discount-label {
+    background-color: var(--black);
+    color: var(--white);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.original-price {
+    font-size: 16px;
+    color: var(--greyishBlue);
+    text-decoration: line-through;
+    margin-top: 5px;
+}
+
+.quantity-cart {
+    display: flex;
+    align-items: center;
+}
+
+.quantity-section {
+    display: flex;
+    align-items: center;
+    background-color: var(--lightBlue);
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.quantity-section button {
+    background-color: transparent;
+    border: none;
+    color: var(--orange);
+    font-size: 24px;
+    width: 40px;
+    height: 60px;
+}
+
+.quantity-section span {
+    margin: 0 10px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.add-to-cart {
+    background-color: var(--orange);
+    color: var(--white);
+    border: none;
+    padding: 10px 20px;
+    height: 60px;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 10px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 900px) {
+    .product-page {
+        width: 100%;
+        padding: 20px;
+        margin-left: 0px;
+    }
+
+    .quantity-cart {
+        flex-direction: column;
+    }
+
+    .quantity-section {
+        margin-right: 0px;
+        margin-bottom: 10px;
+        width: 100%;
+        justify-content: space-between;
+    }
+}

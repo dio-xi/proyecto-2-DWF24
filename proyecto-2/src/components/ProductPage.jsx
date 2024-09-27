@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import './ProductPage.css';
 
 const ProductPage = ({ cartItems, setCartItems }) => {
     const [quantity, setQuantity] = useState(0);

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import ShoppingCart from './ShoppingCart';
+import './NavBar.css';
 
 function NavBar({ cartItems }) {
     const [menuOpen, setMenuOpen] = useState(false);

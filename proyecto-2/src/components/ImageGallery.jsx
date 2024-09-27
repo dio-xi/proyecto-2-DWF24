@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import productImages from './ProductImages.js';
+import './ImageGallery.css';
 
 function ImageGallery() {
     const [selectedImageIndex, setSelectedImageIndex] = useState(0);
@@ -36,7 +37,6 @@ function ImageGallery() {
 
     const closeLightbox = () => {
         setLightbox(false);
-
     };
 
     return (
@@ -52,24 +52,12 @@ function ImageGallery() {
             )}
             <div className="thumbnail-images">
                 {isMobile ? (
-                    <img
-                        src={productImages[selectedImageIndex]}
-                        alt={`Thumbnail ${selectedImageIndex}`}
-                        className="active"
-                    />
-                ) : (
-                    productImages.map((image, index) => (
+                    <div className="main-image">
                         <img
-                            key={index}
-                            src={image}
-                            alt={`Thumbnail ${index}`}
-                            className={selectedImageIndex === index ? 'active' : ''}
-                            onClick={() => handleImageClick(index)}
+                            src={productImages[selectedImageIndex]}
+                            alt="Sneaker"
+                            className="active"
                         />
-                    ))
-                )}
-                {isMobile && (
-                    <div className="navigation-buttons">
                         <button className="prev-button" onClick={previousImage}>
                             <img src='./src/images/icon-previous.svg' alt="Previous" />
                         </button>
@@ -77,6 +65,16 @@ function ImageGallery() {
                             <img src='./src/images/icon-next.svg' alt="Next" />
                         </button>
                     </div>
+                ) : (
+                    productImages.map((image, index) => (
+                        <img
+                            key={index}
+                            src={image}
+                            alt="Sneaker"
+                            className={selectedImageIndex === index ? 'active' : ''}
+                            onClick={() => handleImageClick(index)}
+                        />
+                    ))
                 )}
             </div>
 
@@ -86,25 +84,23 @@ function ImageGallery() {
                         <button className="close-button" onClick={closeLightbox}>X</button>
                         <div className="lightbox-main-image">
                             <img src={productImages[selectedImageIndex]} alt="Product Lightbox" />
-                        </div>
-                        <div className="lightbox-thumbnail-images">
-                            {productImages.map((image, index) => (
-                                <img
-                                    key={index}
-                                    src={image}
-                                    alt={`Thumbnail ${index}`}
-                                    className={selectedImageIndex === index ? 'active' : ''}
-                                    onClick={() => setSelectedImageIndex(index)}
-                                />
-                            ))}
-                        </div>
-                        <div className="navigation-buttons">
                             <button className="prev-button" onClick={previousImage}>
                                 <img src='./src/images/icon-previous.svg' alt="Previous" />
                             </button>
                             <button className="next-button" onClick={nextImage}>
                                 <img src='./src/images/icon-next.svg' alt="Next" />
                             </button>
+                        </div>
+                        <div className="lightbox-thumbnail-images">
+                            {productImages.map((image, index) => (
+                                <img
+                                    key={index}
+                                    src={image}
+                                    alt="Sneaker"
+                                    className={selectedImageIndex === index ? 'active' : ''}
+                                    onClick={() => setSelectedImageIndex(index)}
+                                />
+                            ))}
                         </div>
                     </div>
                 </div>

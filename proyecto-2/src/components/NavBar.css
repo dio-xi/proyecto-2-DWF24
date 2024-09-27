@@ -1,0 +1,138 @@
+.nav-bar {
+    display: flex;
+    align-items: center;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--greyishBlue);
+    justify-content: space-between;
+}
+
+.menu-icon,
+.close-icon {
+    display: none;
+}
+
+.menu-links {
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-start;
+}
+
+.menu-links ul {
+    display: flex;
+    list-style: none;
+    padding-left: 20px;
+}
+
+.menu-links ul li a {
+    margin: 0 15px;
+    font-size: 16px;
+    text-decoration: none;
+    color: var(--darkGrey);
+}
+
+.menu-links ul li a:hover {
+    color: var(--orange);
+}
+
+.cart-profile {
+    display: flex;
+    align-items: center;
+}
+
+.cart-profile button {
+    background-color: var(--white);
+    border: none;
+}
+
+.profile img {
+    height: 40px;
+}
+
+.profile img:hover {
+    border: 2px solid var(--orange);
+    border-radius: 50px;
+}
+
+.shopping-cart {
+    margin-right: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.cart-count {
+    background-color: var(--orange);
+    color: var(--white);
+    border-radius: 50px;
+    width: 20px;
+    height: 15px;
+}
+
+@media (max-width: 900px) {
+    .nav-bar ul {
+        display: none;
+    }
+
+    .nav-bar {
+        padding: 20px;
+        border-bottom: none;
+        justify-content: space-between;
+    }
+
+    .menu-icon {
+        display: block;
+        padding-right: 10px;
+    }
+
+    .close-icon {
+        display: block;
+    }
+
+    .menu-links {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 250px;
+        height: 100%;
+        background-color: var(--white);
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        transition: left 0.3s ease;
+        z-index: 1000;
+        display: flex;
+        flex-direction: column;
+        padding-top: 20px;
+    }
+
+    .menu-links.open {
+        left: 0;
+    }
+
+    .menu-links .close-icon {
+        align-self: flex-end;
+        margin: 20px;
+    }
+
+    .menu-links ul {
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        padding-left: 0;
+    }
+
+    .menu-links ul li {
+        margin: 20px 0;
+    }
+
+    .menu-links ul li a {
+        font-size: 18px;
+        color: var(--darkBlue);
+        text-decoration: none;
+    }
+
+    .cart-profile .profile img {
+        height: 30px;
+    }
+
+    .profile img:hover {
+        border: none;
+    }
+}
