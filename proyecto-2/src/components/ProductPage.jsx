@@ -10,13 +10,16 @@ const ProductPage = ({ cartItems, setCartItems }) => {
 
 const handleDecrease = () => {
     setQuantity((prevQuantity) => 
-        prevQuantity > 0 ? prevQuantity - 1 : 0
+        prevQuantity > 1 ? prevQuantity - 1 : 0
         );
 };
 
 const handleAddToCart = () => {
-    setCartItems(cartItems + quantity);
-    setQuantity(0);
+    if (quantity === 0) {
+      setCartItems(0);
+    } else {
+      setCartItems(() => quantity);
+    }
 };
 
 return (
