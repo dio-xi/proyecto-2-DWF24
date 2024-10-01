@@ -7,11 +7,11 @@ import productImages from './components/ProductImages.js';
 import './index.css';
 
 const App = () => {
-    const [cartItems, setCartItems] = useState(0);
+    const [cartItems, setCartItems] = useState([]);
 
     return (
         <StrictMode>
-          <NavBar cartItems={cartItems} /> 
+          <NavBar cartItems={cartItems} setCartItems={setCartItems} /> 
           <div className="main-content">
             <ImageGallery images={productImages} />
             <ProductPage setCartItems={setCartItems} cartItems={cartItems} />

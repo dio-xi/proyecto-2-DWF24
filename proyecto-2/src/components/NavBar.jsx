@@ -2,16 +2,19 @@ import React, { useState } from 'react';
 import ShoppingCart from './ShoppingCart';
 import './NavBar.css';
 
-function NavBar({ cartItems }) {
+function NavBar({ cartItems, setCartItems }) {
     const [menuOpen, setMenuOpen] = useState(false);
-    const [open, setOpen] = useState(false)
+    const [open, setOpen] = useState(false);
 
     const shoppingCart = () => {
-        setOpen(!open)
-    }
+        setOpen(!open);
+    };
+
     const toggleMenu = () => {
         setMenuOpen(!menuOpen);
     };
+
+    const totalItems = cartItems.reduce((total, item) => total + item.quantity, 0);
 
     return (
         <nav className="nav-bar">
@@ -34,15 +37,15 @@ function NavBar({ cartItems }) {
                 </ul>
             </div>
             <div className="cart-profile">
-                    <button className="shopping-cart" onClick={shoppingCart}>
-                        <img src="./src/images/icon-cart.svg" alt="Shopping-Cart" />
-                        {cartItems > 0 && <div className="cart-count">{cartItems}</div>}
-                    </button>
-                    <button className="profile">
-                        <img src="./src/images/image-avatar.png" className="profile-img" alt="Profile" />
-                    </button>
+                <button className="shopping-cart" onClick={shoppingCart}>
+                    <img src="./src/images/icon-cart.svg" alt="Shopping-Cart" />
+                    {totalItems > 0 && <div className="cart-count">{totalItems}</div>}
+                </button>
+                <button className="profile">
+                    <img src="./src/images/image-avatar.png" className="profile-img" alt="Profile" />
+                </button>
             </div>
-            {open && <ShoppingCart />}
+            {open && <ShoppingCart cartItems={cartItems} setCartItems={setCartItems} />}
         </nav>
     );
 }

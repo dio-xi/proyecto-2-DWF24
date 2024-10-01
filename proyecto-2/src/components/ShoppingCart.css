@@ -48,6 +48,7 @@
     overflow-y: auto;
 }
 
+
 .checkoutImage {
     width: 50px;
     height: auto;
@@ -65,6 +66,15 @@
     margin-bottom: 10px;
 }
 
+.binButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
 .binImage {
     width: 10px;
 }
@@ -77,6 +87,10 @@
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
+}
+
+.emptyCart {
+    color: var(--darkGrey);
 }
 
 @media (max-width: 900px) {
@@ -96,3 +110,4 @@
         z-index: 1;
     }
 } 
+
