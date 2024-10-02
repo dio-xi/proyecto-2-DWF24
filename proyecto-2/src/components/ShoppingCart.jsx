@@ -30,7 +30,7 @@ function ShoppingCart({ cartItems, setCartItems }) {
                                     aria-label="Remove item"
                                     onClick={() => removeItem(item.id)}
                                 >
-                                    <img className="binImage" src="./src/images/icon-delete.svg" alt="Delete" />
+                                    <img className="binImage" src="/images/icon-delete.svg" alt="Delete" />
                                 </button>
                             </article>
                         ))}
