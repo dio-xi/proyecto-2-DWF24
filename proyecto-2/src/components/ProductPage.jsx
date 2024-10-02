@@ -80,6 +80,7 @@ const ProductPage = ({ cartItems, setCartItems }) => {
                         <button onClick={handleIncrease}>+</button>
                     </div>
                     <button className="add-to-cart" onClick={handleAddToCart}>
+                    <img src= "src/images/icon-cart.svg" alt="Cart Icon" className="cart-icon" />
                         Add to cart
                     </button>
                 </div>

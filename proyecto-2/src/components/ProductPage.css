@@ -90,7 +90,7 @@
 
 .add-to-cart {
     background-color: var(--orange);
-    color: var(--white);
+    color: var(--black);
     border: none;
     padding: 10px 20px;
     height: 60px;
@@ -101,6 +101,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.cart-icon {
+    width: 15px;
+    height: 15px;
+    margin-right: 8px;
+    color: var(--black);
 }
 
 @media (max-width: 900px) {
@@ -121,3 +128,4 @@
         justify-content: space-between;
     }
 }
+
