@@ -2,10 +2,10 @@ const product = {
     id: 1,
     name: "Fall Limited Edition Sneakers",
     images: [
-        "./src/images/image-product-1.jpg",
-        "./src/images/image-product-2.jpg",
-        "./src/images/image-product-3.jpg",
-        "./src/images/image-product-4.jpg"
+        "./src/components/images/image-product-1.jpg",
+        "./src/components/images/image-product-2.jpg",
+        "./src/components/images/image-product-3.jpg",
+        "./src/components/images/image-product-4.jpg"
     ],
     price: 125.00,
     discount: 50,
