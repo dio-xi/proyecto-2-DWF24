@@ -39,7 +39,7 @@
 }
 
 .checkoutCart {
-    position: absolute;
+    position: fixed;
     top: 100px;
     right: 100px;
     background-color: var(--white);
@@ -103,7 +103,7 @@
 
 @media (max-width: 900px) {
     .checkoutCart {
-        /* position: fixed; */
+        position: fixed;
         top: 80px;
         right: 20px;
         left: 20px;

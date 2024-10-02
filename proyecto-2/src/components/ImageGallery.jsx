@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import productImages from './ProductImages.js';
+import product from './Products.js';
 import './ImageGallery.css';
 
 function ImageGallery() {
@@ -28,11 +28,11 @@ function ImageGallery() {
     };
 
     const nextImage = () => {
-        setSelectedImageIndex((prevIndex) => (prevIndex + 1) % productImages.length);
+        setSelectedImageIndex((prevIndex) => (prevIndex + 1) % product.images.length);
     };
 
     const previousImage = () => {
-        setSelectedImageIndex((prevIndex) => (prevIndex - 1 + productImages.length) % productImages.length);
+        setSelectedImageIndex((prevIndex) => (prevIndex - 1 + product.images.length) % product.images.length);
     };
 
     const closeLightbox = () => {
@@ -44,7 +44,7 @@ function ImageGallery() {
             {!isMobile && (
                 <div className="main-image">
                     <img
-                        src={productImages[selectedImageIndex]}
+                        src={product.images[selectedImageIndex]}
                         alt="Product"
                         onClick={() => openLightBox(selectedImageIndex)}
                     />
@@ -54,7 +54,7 @@ function ImageGallery() {
                 {isMobile ? (
                     <div className="main-image">
                         <img
-                            src={productImages[selectedImageIndex]}
+                            src={product.images[selectedImageIndex]}
                             alt="Sneaker"
                             className="active"
                         />
@@ -66,7 +66,7 @@ function ImageGallery() {
                         </button>
                     </div>
                 ) : (
-                    productImages.map((image, index) => (
+                    product.images.map((image, index) => (
                         <img
                             key={index}
                             src={image}
@@ -83,7 +83,7 @@ function ImageGallery() {
                     <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
                         <button className="close-button" onClick={closeLightbox}>X</button>
                         <div className="lightbox-main-image">
-                            <img src={productImages[selectedImageIndex]} alt="Product Lightbox" />
+                            <img src={product.images[selectedImageIndex]} alt="Product Lightbox" />
                             <button className="prev-button" onClick={previousImage}>
                                 <img src='./src/images/icon-previous.svg' alt="Previous" />
                             </button>
@@ -92,7 +92,7 @@ function ImageGallery() {
                             </button>
                         </div>
                         <div className="lightbox-thumbnail-images">
-                            {productImages.map((image, index) => (
+                            {product.images.map((image, index) => (
                                 <img
                                     key={index}
                                     src={image}

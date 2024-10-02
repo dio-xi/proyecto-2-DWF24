@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import './ProductPage.css';
+import product from './Products.js';
 
 const ProductPage = ({ cartItems, setCartItems }) => {
     const [quantity, setQuantity] = useState(0);
@@ -15,35 +16,30 @@ const ProductPage = ({ cartItems, setCartItems }) => {
     };
 
     const handleAddToCart = () => {
+        const updatedProduct = { ...product, quantity: quantity, image: product.images[0] };
+
         if (quantity === 0) {
             setCartItems((prevCartItems) => {
-                return prevCartItems.filter(item => item.id !== 1);
+                return prevCartItems.filter(item => item.id !== updatedProduct.id);
+            });
+        } else {
+            setCartItems((prevCartItems) => {
+                const cart = Array.isArray(prevCartItems) ? prevCartItems : [];
+
+                const existingProduct = cart.find(item => item.id === updatedProduct.id);
+
+                if (existingProduct) {
+                    return cart.map(item =>
+                        item.id === updatedProduct.id
+                            ? { ...item, quantity: quantity }
+                            : item
+                    );
+                } else {
+                    return [...cart, updatedProduct];
+                }
             });
         }
 
-        const product = {
-            id: 1,
-            name: "Fall Limited Edition Sneakers",
-            image: "./src/images/image-product-1.jpg",
-            price: 125.00,
-            quantity: quantity,
-        };
-
-        setCartItems((prevCartItems) => {
-            const cart = Array.isArray(prevCartItems) ? prevCartItems : [];
-
-            const existingProduct = cart.find(item => item.id === product.id);
-
-            if (existingProduct) {
-                return cart.map(item =>
-                    item.id === product.id
-                        ? { ...item, quantity: quantity }
-                        : item
-                );
-            } else {
-                return [...cart, product];
-            }
-        });
         setQuantity(0);
     };
 
@@ -51,18 +47,14 @@ const ProductPage = ({ cartItems, setCartItems }) => {
         <div className="product-page">
             <div className="product-details">
                 <p className="company-name">SNEAKER COMPANY</p>
-                <h1>Fall Limited Edition Sneakers</h1>
-                <p>
-                    These low-profile sneakers are your perfect casual wear companion.
-                    Featuring a durable rubber outer sole, they'll withstand everything
-                    the weather can offer.
-                </p>
+                <h1>{product.name}</h1>
+                <p>{product.description}</p>
                 <div className="price-section">
                     <div className="final-price">
-                        <span className="discounted-price">$125.00</span>
-                        <span className="discount-label">50%</span>
+                        <span className="discounted-price">${product.price.toFixed(2)}</span>
+                        <span className="discount-label">{product.discount}%</span>
                     </div>
-                    <span className="original-price">$250.00</span>
+                    <span className="original-price">${product.originalPrice.toFixed(2)}</span>
                 </div>
 
                 <div className="quantity-cart">
