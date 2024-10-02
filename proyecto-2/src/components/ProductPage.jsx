@@ -9,7 +9,7 @@ const ProductPage = ({ cartItems, setCartItems }) => {
     };
 
     const handleDecrease = () => {
-        setQuantity((prevQuantity) => 
+        setQuantity((prevQuantity) =>
             prevQuantity > 0 ? prevQuantity - 1 : 0
         );
     };
@@ -19,8 +19,6 @@ const ProductPage = ({ cartItems, setCartItems }) => {
             setCartItems((prevCartItems) => {
                 return prevCartItems.filter(item => item.id !== 1);
             });
-            console.log("El producto fue removido del carrito porque la cantidad es 0.");
-            return;
         }
 
         const product = {
@@ -31,28 +29,22 @@ const ProductPage = ({ cartItems, setCartItems }) => {
             quantity: quantity,
         };
 
-        console.log("Intentando agregar producto al carrito:", product);
-
         setCartItems((prevCartItems) => {
             const cart = Array.isArray(prevCartItems) ? prevCartItems : [];
 
             const existingProduct = cart.find(item => item.id === product.id);
 
             if (existingProduct) {
-                console.log("Producto ya está en el carrito. Actualizando cantidad...");
-
                 return cart.map(item =>
                     item.id === product.id
                         ? { ...item, quantity: quantity }
                         : item
                 );
             } else {
-                console.log("Producto no está en el carrito. Agregando nuevo producto...");
                 return [...cart, product];
             }
         });
-
-        console.log("Producto agregado al carrito");
+        setQuantity(0);
     };
 
     return (
@@ -80,7 +72,7 @@ const ProductPage = ({ cartItems, setCartItems }) => {
                         <button onClick={handleIncrease}>+</button>
                     </div>
                     <button className="add-to-cart" onClick={handleAddToCart}>
-                    <img src= "src/images/icon-cart.svg" alt="Cart Icon" className="cart-icon" />
+                        <img src="src/images/icon-cart.svg" alt="Cart Icon" className="cart-icon" />
                         Add to cart
                     </button>
                 </div>
