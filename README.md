@@ -2,5 +2,5 @@
 
 -Diogo Antunes
 -Diego Abero
--Maximiliano Zicavo
+-Maximo Zicavo
 -Valentina Fernández
