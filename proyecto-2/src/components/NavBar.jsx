@@ -19,14 +19,14 @@ function NavBar({ cartItems, setCartItems }) {
     return (
         <nav className="nav-bar">
             <div className="menu-icon" onClick={toggleMenu}>
-                <img src="./src/images/icon-menu.svg" alt="Menu" />
+                <img src="/images/icon-menu.svg" alt="Menu" />
             </div>
             <div className="logo">
-                <a href="#"><img src='./src/images/logo.svg' alt="Logo" /></a>
+                <a href="#"><img src="/images/logo.svg" alt="Logo" /></a>
             </div>
             <div className={`menu-links ${menuOpen ? "open" : ""}`}>
                 <div className="close-icon" onClick={toggleMenu}>
-                    <img src="./src/images/icon-close.svg" alt="Close" />
+                    <img src="/images/icon-close.svg" alt="Close" />
                 </div>
                 <ul>
                     <li><a href='#'>Collections</a></li>
@@ -38,11 +38,11 @@ function NavBar({ cartItems, setCartItems }) {
             </div>
             <div className="cart-profile">
                 <button className="shopping-cart" onClick={shoppingCart}>
-                    <img src="./src/images/icon-cart.svg" alt="Shopping-Cart" />
+                    <img src="/images/icon-cart.svg" alt="Shopping-Cart" />
                     {totalItems > 0 && <div className="cart-count">{totalItems}</div>}
                 </button>
                 <button className="profile">
-                    <img src="./src/images/image-avatar.png" className="profile-img" alt="Profile" />
+                    <img src="/images/image-avatar.png" className="profile-img" alt="Profile" />
                 </button>
             </div>
             {open && <ShoppingCart cartItems={cartItems} setCartItems={setCartItems} />}

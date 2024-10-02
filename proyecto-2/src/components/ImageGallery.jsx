@@ -59,10 +59,10 @@ function ImageGallery() {
                             className="active"
                         />
                         <button className="prev-button" onClick={previousImage}>
-                            <img src='./src/images/icon-previous.svg' alt="Previous" />
+                            <img src="/images/icon-previous.svg" alt="Previous" />
                         </button>
                         <button className="next-button" onClick={nextImage}>
-                            <img src='./src/images/icon-next.svg' alt="Next" />
+                            <img src="/images/icon-next.svg" alt="Next" />
                         </button>
                     </div>
                 ) : (
@@ -85,10 +85,10 @@ function ImageGallery() {
                         <div className="lightbox-main-image">
                             <img src={product.images[selectedImageIndex]} alt="Product Lightbox" />
                             <button className="prev-button" onClick={previousImage}>
-                                <img src='./src/images/icon-previous.svg' alt="Previous" />
+                                <img src="/images/icon-previous.svg" alt="Previous" />
                             </button>
                             <button className="next-button" onClick={nextImage}>
-                                <img src='./src/images/icon-next.svg' alt="Next" />
+                                <img src="/images/icon-next.svg" alt="Next" />
                             </button>
                         </div>
                         <div className="lightbox-thumbnail-images">
